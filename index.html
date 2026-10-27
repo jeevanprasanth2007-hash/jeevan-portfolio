@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jeevan Prasanth · ECE Student &amp; Developer Portfolio</title>
+<meta name="description" content="Portfolio of Jeevan Prasanth, an Electronics and Communication Engineering student at SKCET, Coimbatore, building mobile apps, web systems and antenna designs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a1230'/%3E%3Cpath d='M30 25v35a12 12 0 0 1-24 0M30 25h40M50 25v50' stroke='%2322d3ee' stroke-width='9' fill='none' stroke-linecap='round' transform='translate(10 5)'/%3E%3Ccircle cx='80' cy='25' r='8' fill='%23fb923c'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f2fbf9;--bg2:#e0f4f1;--ink:#0f2a33;--mute:#4a646e;--cy:#0284c7;--pu:#6d5be8;--or:#e2552f;--gr:#0d9488;--card:rgba(255,255,255,.7);--line:rgba(15,42,51,.14);--nav:rgba(242,251,249,.84);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06161e;--bg2:#0b2a35;--ink:#effafa;--mute:#9bc0c6;--cy:#38bdf8;--pu:#a78bfa;--or:#ff8a6b;--gr:#2dd4bf;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.16);--nav:rgba(6,22,30,.84);color-scheme:dark}}
+:root[data-theme="dark"]{color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Arial Black","Segoe UI",system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.01em}
+a{color:inherit}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:96px 0;position:relative}
+.grad{background:linear-gradient(100deg,var(--cy),var(--pu) 55%,var(--or));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(2rem,5vw,3.4rem);max-width:15ch;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,211,238,.25)}
+.btn.pri{background:linear-gradient(100deg,var(--cy),var(--pu));color:#fff;border:0}
+.btn[aria-disabled=true]{opacity:.65;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Arial Black",sans-serif;text-decoration:none;font-size:1.1rem}
+.links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:8px 11px;border-radius:999px;text-decoration:none;font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--mute)}
+.links a:hover{color:var(--ink)}.links a.on{color:var(--ink);background:linear-gradient(100deg,rgba(34,211,238,.25),rgba(168,85,247,.25))}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-size:1.1rem;cursor:pointer}
+@media(max-width:940px){.burger{display:block}.links{position:absolute;top:calc(64px + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg2);flex-direction:column;padding:12px 22px 20px;display:none;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{font-size:1rem;padding:12px}}
+#hero{min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;background:radial-gradient(900px 500px at 80% 20%,rgba(168,85,247,.28),transparent),radial-gradient(700px 500px at 10% 90%,rgba(34,211,238,.2),transparent),var(--bg)}
+#cv{position:absolute;inset:0;width:100%;height:100%;opacity:.75}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+.name{font-size:clamp(2.6rem,8.5vw,6rem);margin:6px 0 14px}
+.name span{display:inline-block;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.name span:nth-child(2){animation-delay:.18s}
+@keyframes rise{from{opacity:0;transform:translateY(40px) rotateX(40deg)}to{opacity:1;transform:none}}
+.tag{font-family:"Arial Black",sans-serif;font-size:clamp(1.05rem,2.4vw,1.5rem);color:var(--or);margin:0 0 12px}
+.role{font-weight:700;color:var(--cy);margin:0 0 14px}
+.intro{color:var(--mute);max-width:56ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.core{width:100%;max-width:340px;justify-self:center;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:2px solid var(--mute);border-radius:14px}
+.scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--cy);animation:dot 1.6s infinite}
+@keyframes dot{to{transform:translateY(14px);opacity:0}}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.core{max-width:230px;order:-1}}
+.reveal{opacity:0;transform:perspective(1000px) translate3d(0,44px,-180px) rotateX(10deg);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.about p{color:var(--mute);margin:0 0 16px;max-width:60ch}
+.path{position:relative;list-style:none;margin:0;padding:0 0 0 34px}
+.path::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cy),var(--pu),var(--or))}
+.path li{position:relative;margin-bottom:12px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;transition:transform .2s,border-color .2s}
+.path li:hover{transform:translateX(6px);border-color:var(--cy)}
+.path li::before{content:"";position:absolute;left:-30px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--cy);box-shadow:0 0 12px var(--cy)}
+.path li:nth-child(even)::before{background:var(--pu);box-shadow:0 0 12px var(--pu)}
+.path b{display:block}.path small{color:var(--mute)}
+#skills{background:linear-gradient(160deg,var(--bg2),var(--bg))}
+.legend{display:flex;gap:18px;flex-wrap:wrap;color:var(--mute);font-size:.9rem;margin:-14px 0 26px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;background:var(--cy)}.sw.o{background:none;border:2px solid var(--mute)}
+.skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;border-top:4px solid var(--c);transition:transform .25s,box-shadow .25s}
+.sk:hover{transform:translateY(-5px);box-shadow:0 14px 34px color-mix(in srgb,var(--c) 30%,transparent)}
+.sk h3{font-size:1rem;margin-bottom:14px;color:var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;font-size:.9rem;font-weight:600;border:1.5px solid var(--line);background:rgba(127,127,127,.08)}
+.chip i{width:9px;height:9px;border-radius:50%;border:2px solid var(--mute)}
+.chip.used{border-color:var(--c)}.chip.used i{background:var(--c);border-color:var(--c);box-shadow:0 0 8px var(--c)}
+.projects{display:grid;gap:26px}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--card);transition:transform .15s;transform-style:preserve-3d;will-change:transform}
+.proj:nth-child(even) .art{order:2}
+@media(max-width:820px){.proj{grid-template-columns:1fr}.proj:nth-child(even) .art{order:0}}
+.art{display:grid;place-items:center;padding:28px;min-height:300px;background:var(--g)}
+.art svg{width:100%;max-width:300px;height:auto}
+.body{padding:30px}
+.cat{color:var(--c);font-weight:700;font-size:.9rem;margin:0 0 6px}
+.body h3{font-size:1.7rem;margin-bottom:12px}
+.body p{color:var(--mute);margin:0 0 16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.badge{padding:5px 12px;border-radius:8px;font-size:.82rem;font-weight:700;background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--ink);border:1px solid var(--c);animation:pulse 3.5s ease-in-out infinite}
+.badge:nth-child(2n){animation-delay:.6s}
+@keyframes pulse{50%{box-shadow:0 0 12px color-mix(in srgb,var(--c) 55%,transparent)}}
+dialog{border:1px solid var(--line);border-radius:24px;background:var(--bg2);color:var(--ink);max-width:640px;width:calc(100% - 32px);padding:30px}
+dialog::backdrop{background:rgba(3,8,24,.75);backdrop-filter:blur(4px)}
+dialog h3{font-size:1.6rem;margin-bottom:16px}dialog h4{margin:16px 0 4px;color:var(--cy)}dialog p{margin:0;color:var(--mute)}
+.ph{margin-top:18px;padding:18px;border:2px dashed var(--line);border-radius:14px;color:var(--mute);font-size:.9rem;text-align:center}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+@media(max-width:820px){.tl{grid-template-columns:1fr}}
+.ed{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;position:relative;border-top:4px solid var(--c)}
+.ed .yr{font-family:"Arial Black",sans-serif;font-size:1.9rem;color:var(--c)}
+.ed h3{font-size:1.05rem;margin:8px 0 6px}.ed p{margin:0;color:var(--mute);font-size:.95rem}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.cert{padding:18px 20px;border-radius:16px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c);transition:transform .2s}
+.cert:hover{transform:translateY(-4px)}.cert b{display:block;margin-bottom:4px}.cert span{color:var(--mute);font-size:.92rem}
+#contact{background:linear-gradient(135deg,#0f766e,#0369a1 55%,#5b4bd6);color:#fff;text-align:center}
+#contact h2{max-width:20ch;margin:0 auto 18px;color:#fff}
+#contact p{max-width:58ch;margin:0 auto 28px;color:#e6defa}
+#contact .btn{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+#contact .btn.pri{background:#fff;color:#2b1065}
+.meta{margin-top:26px;color:#e6defa}
+footer{padding:26px 0;text-align:center;color:var(--mute);font-size:.9rem}
+#top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--cy),var(--pu));color:#fff;font-size:1.3rem;font-weight:900;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+#top.show{opacity:1;pointer-events:auto}
+#glow{position:fixed;width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(34,211,238,.13),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:0}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;z-index:99;background:#fff;color:#000;padding:8px 14px;border-radius:8px}
+.name{color:#b7791f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .name{color:#facc15}}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#hero{background:radial-gradient(900px 500px at 80% 20%,rgba(109,91,232,.16),transparent),radial-gradient(700px 500px at 10% 90%,rgba(14,165,233,.14),transparent)!important}
+#skills,#education{background:transparent!important}
+.sk,.ed,.cert,.proj,.path li{backdrop-filter:blur(10px)}
+@media(prefers-reduced-motion:reduce){#gl{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}#cv,#glow{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#home" aria-label="Jeevan Prasanth, home"><span class="grad">JP</span>.</a>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Toggle menu">☰</button>
+<ul class="links" id="links">
+<li><a href="#home">HOME</a></li><li><a href="#about">ABOUT</a></li><li><a href="#skills">SKILLS</a></li><li><a href="#projects">PROJECTS</a></li><li><a href="#education">EDUCATION</a></li><li><a href="#certifications">CERTIFICATIONS</a></li><li><a href="#contact">CONTACT</a></li>
+</ul></nav></div></header>
+
+<main>
+<section id="home">
+<canvas id="cv" aria-hidden="true"></canvas>
+<div class="wrap hero-grid">
+<div>
+<p class="role">Electronics and Communication Engineering · SKCET, Coimbatore</p>
+<h1 class="name" aria-label="Jeevan Prasanth"><span>JEEVAN</span> <span>PRASANTH</span></h1>
+<p class="tag">ENGINEERING IDEAS. BUILDING WHAT’S NEXT.</p>
+<p class="role">ECE Student | Software Developer | Electronics &amp; Emerging Technology Enthusiast</p>
+<p class="intro">I’m an Electronics and Communication Engineering student passionate about building practical solutions at the intersection of electronics, software, and intelligent technology. I enjoy exploring new technologies, developing applications, and transforming ideas into working projects.</p>
+<div class="cta">
+<a class="btn pri" href="#projects">Explore My Projects</a>
+<a class="btn" id="resume" href="#contact">Download Resume</a>
+<a class="btn" href="https://github.com/jeevanprasanth2007-hash" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://linkedin.com/in/hjeevan-prasanth-e-77280032a" target="_blank" rel="noopener">LinkedIn</a>
+</div></div>
+<svg class="core" viewBox="0 0 300 300" role="img" aria-label="Animated electronic core connected to technology nodes">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".6" stop-color="#a855f7"/><stop offset="1" stop-color="#fb923c"/></linearGradient></defs>
+<g stroke="url(#g1)" stroke-width="2" fill="none">
+<path d="M150 150L40 60M150 150L260 70M150 150L50 250M150 150L255 240M150 150V20M150 150V285M150 150H15M150 150H288" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="0" to="-56" dur="2s" repeatCount="indefinite"/></path>
+<rect x="95" y="95" width="110" height="110" rx="18" fill="rgba(7,16,42,.85)" stroke-width="3"/><rect x="118" y="118" width="64" height="64" rx="10"/>
+<g stroke-width="3" stroke-linecap="round"><path d="M110 85v10M135 85v10M165 85v10M190 85v10M110 205v10M135 205v10M165 205v10M190 205v10M85 110h10M85 135h10M85 165h10M85 190h10M205 110h10M205 135h10M205 165h10M205 190h10"/></g></g>
+<text x="150" y="157" text-anchor="middle" font-family="Arial Black" font-size="22" fill="#fff">JP</text>
+<g fill="#22d3ee"><circle cx="40" cy="60" r="7"/><circle cx="50" cy="250" r="7" fill="#fb923c"/><circle cx="260" cy="70" r="7" fill="#a855f7"/><circle cx="255" cy="240" r="7"/><circle cx="150" cy="20" r="6" fill="#fb923c"/><circle cx="15" cy="150" r="6" fill="#a855f7"/><circle cx="288" cy="150" r="6" fill="#22d3ee"/><circle cx="150" cy="285" r="6" fill="#a855f7"/>
+<animate attributeName="opacity" values="1;.45;1" dur="2.4s" repeatCount="indefinite"/></g></svg>
+</div>
+<div class="scroll" aria-hidden="true"></div>
+</section>
+
+<section id="about"><div class="wrap">
+<h2 class="reveal">CURIOUS BY NATURE. <span class="grad">ENGINEERED TO BUILD.</span></h2>
+<div class="about reveal">
+<div>
+<p>I’m an Electronics and Communication Engineering student exploring two sides of engineering: the hardware that senses and transmits, and the software that makes it useful.</p>
+<p>My projects so far span a Flutter mobile app, a web-based monitoring system and an antenna simulation in Ansys HFSS. I like learning by building, and I’m looking for internships and collaborations where I can contribute and keep growing.</p>
+</div>
+<ol class="path" aria-label="Areas of interest">
+<li><b>Embedded systems and IoT</b><small>Arduino IDE and hardware-oriented learning</small></li>
+<li><b>Electronics and antenna design</b><small>Electromagnetic simulation with Ansys HFSS</small></li>
+<li><b>Mobile application development</b><small>Flutter and Dart apps</small></li>
+<li><b>Web development and backend integration</b><small>HTML, CSS, JavaScript, Supabase</small></li>
+<li><b>Practical problem-solving</b><small>Emerging technologies, learned by doing</small></li>
+</ol></div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2 class="reveal">TOOLS I <span class="grad">BUILD WITH.</span></h2>
+<div class="legend"><span><i class="sw"></i>Used in a project on this page</span><span><i class="sw o"></i>Part of my toolkit and ongoing learning</span></div>
+<div class="skgrid" id="skgrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2 class="reveal">THINGS I’VE <span class="grad">BUILT.</span></h2>
+<div class="projects" id="plist"></div>
+</div></section>
+
+<section id="education" style="background:linear-gradient(160deg,var(--bg2),var(--bg))"><div class="wrap">
+<h2 class="reveal">EDUCATION</h2>
+<div class="tl reveal">
+<article class="ed" style="--c:var(--cy)"><div class="yr">2028</div><p><b>Expected graduation</b></p><h3>Bachelor of Engineering, Electronics and Communication Engineering</h3><p>Sri Krishna College of Engineering and Technology, Coimbatore</p></article>
+<article class="ed" style="--c:var(--pu)"><div class="yr">2024</div><p><b>Higher secondary</b></p><h3>Higher Secondary Education</h3><p>Viswadeepthi Matric Higher Secondary School, Pollachi</p></article>
+<article class="ed" style="--c:var(--or)"><div class="yr">2022</div><p><b>Secondary</b></p><h3>Secondary Education</h3><p>Arokiamatha Matric Higher Secondary School, Pollachi</p></article>
+</div></div></section>
+
+<section id="certifications"><div class="wrap">
+<h2 class="reveal">CERTIFICATIONS <span class="grad">&amp; TRAINING</span></h2>
+<div class="certs reveal" id="clist"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>HAVE AN IDEA? LET’S BUILD SOMETHING MEANINGFUL.</h2>
+<p>I’m open to internships, technical collaborations and project discussions. If you’re a recruiter or a fellow builder, send me a note.</p>
+<div class="cta" style="justify-content:center">
+<a class="btn pri" href="mailto:jeevanprasanth2007@gmail.com">Email me</a>
+<a class="btn" href="https://linkedin.com/in/hjeevan-prasanth-e-77280032a" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/jeevanprasanth2007-hash" target="_blank" rel="noopener">GitHub</a>
+</div>
+<p class="meta">jeevanprasanth2007@gmail.com · Coimbatore, India</p>
+</div></section>
+</main>
+<footer>© 2026 Jeevan Prasanth. Designed and built from scratch.</footer>
+<button id="top" aria-label="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="glow" aria-hidden="true"></div>
+<dialog id="dlg" aria-labelledby="dt"><h3 id="dt"></h3><div id="db"></div><div class="ph">Space for screenshots, simulation images or a demo. Add them in the PROJECTS data.</div><p style="margin-top:20px"><button class="btn" id="dclose">Close</button></p></dialog>
+
+<script>
+/* ===== Editable content ===== */
+// Put your resume PDF next to this file (or host it) and paste its path here, e.g. "Jeevan_Prasanth_Resume.pdf"
+const RESUME_URL = "";
+const SKILLS = [
+ {t:"Programming",c:"#22d3ee",i:[["C"],["C++"],["Java"],["Python"]]},
+ {t:"Web development",c:"#a855f7",i:[["HTML",1],["CSS",1],["JavaScript",1]]},
+ {t:"Mobile development",c:"#34d399",i:[["Flutter",1],["Dart",1],["Android Studio",1]]},
+ {t:"Backend and deployment",c:"#fb923c",i:[["Supabase",1],["Firebase Authentication",1],["Vercel",1]]},
+ {t:"Electronics and simulation",c:"#22d3ee",i:[["Ansys HFSS",1],["Antenna Design",1],["Arduino IDE"],["MATLAB"],["Simulink"]]},
+ {t:"Other skills",c:"#a855f7",i:[["Problem-solving"],["Technical learning"]]}
+];
+const PROJECTS = [
+ {n:"ReGen: E-waste Management App",cat:"Mobile Application Development",c:"#34d399",g:"linear-gradient(135deg,#064e3b,#0e7490)",
+  d:"Developed a mobile application to promote responsible e-waste disposal and recycling using Flutter and Dart in Android Studio, with Firebase Authentication for secure user login and registration.",
+  tech:["Flutter","Dart","Android Studio","Firebase Authentication"],
+  prob:"E-waste is often thrown away with ordinary trash because people lack an easy way to learn about responsible disposal.",
+  sol:"A mobile app that encourages responsible e-waste disposal and recycling, with secure sign-up and login.",
+  me:"I built the app in Flutter and Dart and set up user authentication with Firebase.",links:[],
+  art:'<svg viewBox="0 0 160 300"><rect x="10" y="6" width="140" height="288" rx="26" fill="#07102a" stroke="#d1fae5" stroke-width="4"/><rect x="58" y="14" width="44" height="8" rx="4" fill="#1e293b"/><text x="80" y="58" text-anchor="middle" font-family="Arial Black" font-size="18" fill="#34d399">ReGen</text><rect x="26" y="76" width="108" height="56" rx="14" fill="#34d399"/><text x="80" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#052e1b">Recycle e-waste</text><rect x="26" y="144" width="50" height="50" rx="12" fill="#22d3ee"/><rect x="84" y="144" width="50" height="50" rx="12" fill="#f4f7ff"/><rect x="26" y="206" width="108" height="14" rx="7" fill="#1e3a5f"/><rect x="26" y="228" width="70" height="14" rx="7" fill="#1e3a5f"/><rect x="40" y="258" width="80" height="22" rx="11" fill="#22d3ee"/></svg>'},
+ {n:"OxyGuard: Oxygen Pipeline Monitoring",cat:"Web Development",c:"#22d3ee",g:"linear-gradient(135deg,#0c4a6e,#134e4a)",
+  d:"Developed a web-based oxygen pipeline monitoring system to highlight potential leakage risks and visualize system conditions. Integrated Supabase for backend services and database management, and deployed the application using Vercel.",
+  tech:["HTML","CSS","JavaScript","Supabase","Vercel"],
+  prob:"Oxygen pipelines need clear visibility into system conditions and possible leakage risks.",
+  sol:"A web dashboard that highlights potential leakage risks and visualizes system conditions.",
+  me:"I built the web interface and integrated Supabase for backend services and database management, then deployed it on Vercel.",links:[],
+  art:'<svg viewBox="0 0 300 220"><rect x="4" y="4" width="292" height="212" rx="14" fill="#07203a" stroke="#67e8f9" stroke-width="2"/><path d="M24 70h100v40h80v40h72" stroke="#22d3ee" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="124" cy="90" r="9" fill="#fb923c"/><rect x="24" y="130" width="86" height="64" rx="8" fill="#0c4a6e"/><path d="M32 180l18-24 16 12 20-32" stroke="#34d399" stroke-width="3" fill="none"/><rect x="190" y="26" width="86" height="36" rx="8" fill="#0c4a6e"/><text x="233" y="48" text-anchor="middle" font-size="11" fill="#e0f2fe">Illustrative</text><text x="150" y="208" text-anchor="middle" font-size="9" fill="#a5f3fc">Simulated visual, not real data</text></svg>'},
+ {n:"Helmet-Conformal Antenna Design",cat:"Electronics and Electromagnetic Simulation",c:"#a855f7",g:"linear-gradient(135deg,#2e1065,#9a3412)",
+  d:"Designed a helmet-conformal antenna operating across UHF and L-band frequencies using Ansys HFSS, focusing on impedance matching, radiation performance, and compact integration for wireless communication applications.",
+  tech:["Ansys HFSS","Electromagnetic Simulation","Antenna Design"],
+  prob:"Wireless communication gear worn on a helmet needs a compact antenna that still matches well and radiates effectively.",
+  sol:"A helmet-conformal antenna design covering UHF and L-band, developed in Ansys HFSS with attention to impedance matching and radiation performance.",
+  me:"I designed and simulated the antenna in Ansys HFSS. This is a simulation project; no physical build or measurement is claimed.",links:[],
+  art:'<svg viewBox="0 0 260 240"><path d="M50 150a80 80 0 0 1 160 0v30H50z" fill="#1e1b4b" stroke="#c4b5fd" stroke-width="4"/><rect x="95" y="60" width="70" height="14" rx="7" fill="#fb923c"/><g fill="none" stroke="#22d3ee" stroke-width="2.5"><path d="M130 70a40 40 0 0 1 60-30"><animate attributeName="opacity" values="1;.2;1" dur="2s" repeatCount="indefinite"/></path><path d="M130 70a70 70 0 0 1 100-40"><animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/></path><path d="M130 70a40 40 0 0 0-60-30"/><path d="M130 70a70 70 0 0 0-100-40"/></g><text x="130" y="215" text-anchor="middle" font-size="10" fill="#e9d5ff">Concept illustration</text></svg>'}
+];
+const CERTS = [
+ ["Advanced Diploma in Python Programming","CSC Computer Education","#22d3ee"],
+ ["Advanced Diploma in Java Programming","CSC Computer Education","#a855f7"],
+ ["Flutter and Dart: Developing iOS, Android, and Mobile Apps","Coursera","#34d399"],
+ ["Project on CSS and HTML: Designing a Company Website","Coursera","#fb923c"],
+ ["Introduction to Telecommunication","BSNL","#22d3ee"],
+ ["Internship Training","Roots Industries Pvt. Ltd., Coimbatore","#a855f7"],
+ ["Prompt Engineering","Net Tel Solutions India Pvt. Ltd.","#fb923c"]
+];
+/* ===== Rendering ===== */
+const CM={"#22d3ee":"var(--cy)","#a855f7":"var(--pu)","#fb923c":"var(--or)","#34d399":"var(--gr)"};
+const $=(s,e=document)=>e.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+$("#skgrid").innerHTML=SKILLS.map(s=>`<div class="sk reveal" style="--c:${CM[s.c]||s.c}"><h3>${esc(s.t)}</h3><div class="chips">${s.i.map(i=>`<span class="chip ${i[1]?"used":""}"><i></i>${esc(i[0])}</span>`).join("")}</div></div>`).join("");
+$("#plist").innerHTML=PROJECTS.map((p,k)=>`<article class="proj reveal" style="--c:${CM[p.c]||p.c};--g:${p.g}" data-tilt><div class="art">${p.art}</div><div class="body"><p class="cat">${esc(p.cat)}</p><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p><div class="badges">${p.tech.map(t=>`<span class="badge">${esc(t)}</span>`).join("")}</div><button class="btn pri" data-k="${k}">Project details</button>${p.links.map(l=>` <a class="btn" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join("")}</div></article>`).join("");
+$("#clist").innerHTML=CERTS.map(c=>`<div class="cert" style="--c:${CM[c[2]]||c[2]}"><b>${esc(c[0])}</b><span>${esc(c[1])}</span></div>`).join("");
+const dlg=$("#dlg");
+$("#plist").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;const p=PROJECTS[b.dataset.k];$("#dt").textContent=p.n;$("#db").innerHTML=`<h4>The problem</h4><p>${esc(p.prob)}</p><h4>The solution</h4><p>${esc(p.sol)}</p><h4>My contribution</h4><p>${esc(p.me)}</p><h4>Technologies</h4><p>${esc(p.tech.join(", "))}</p>`;dlg.showModal()});
+$("#dclose").onclick=()=>dlg.close();dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+/* Resume */
+const rb=$("#resume");
+if(RESUME_URL){rb.href=RESUME_URL;rb.setAttribute("download","")}
+else{rb.setAttribute("aria-disabled","true");rb.title="Add your resume PDF path to RESUME_URL in the script";rb.addEventListener("click",e=>{e.preventDefault();alert("The resume PDF isn’t linked yet. Set RESUME_URL in the page script to your PDF’s path.")})}
+/* Nav */
+const bg=$("#burger"),lk=$("#links");
+bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+lk.addEventListener("click",e=>{if(e.target.tagName==="A"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false)}});
+const secs=[...document.querySelectorAll("main section")],as=[...lk.querySelectorAll("a")];
+const spy=()=>{let cur=secs[0].id;secs.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});as.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur));$("#top").classList.toggle("show",scrollY>600)};
+addEventListener("scroll",spy,{passive:true});spy();
+$("#top").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+/* Reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(!reduce){
+/* Tilt + cursor glow (fine pointers only) */
+if(matchMedia("(pointer:fine)").matches){
+document.querySelectorAll("[data-tilt]").forEach(c=>{c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*5}deg) rotateX(${-y*5}deg)`});c.addEventListener("pointerleave",()=>c.style.transform="")});
+const gl=$("#glow");addEventListener("pointermove",e=>{gl.style.left=e.clientX+"px";gl.style.top=e.clientY+"px"},{passive:true})}
+/* Circuit canvas */
+const cv=$("#cv"),x=cv.getContext("2d");let W,H,pts=[],run=true;
+const size=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;const n=Math.min(36,Math.floor(W/38));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,d:Math.random()<.5?0:1,s:.3+Math.random()*.6,c:["#0ea5e9","#7c6cf0","#ff7a59"][Math.floor(Math.random()*3)],t:[]}))};
+size();addEventListener("resize",size);
+new IntersectionObserver(e=>run=e[0].isIntersecting).observe(cv);
+(function f(){if(run){x.clearRect(0,0,W,H);pts.forEach(p=>{p.t.push([p.x,p.y]);if(p.t.length>40)p.t.shift();if(p.d)p.x+=p.s;else p.y+=p.s;if(Math.random()<.015)p.d^=1;if(p.x>W||p.y>H){p.x=Math.random()*W*(p.d?0:1);p.y=Math.random()*H*(p.d?1:0);p.t=[]}x.strokeStyle=p.c;x.globalAlpha=.35;x.lineWidth=1.5;x.beginPath();p.t.forEach((q,i)=>i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1]));x.stroke();x.globalAlpha=1;x.fillStyle=p.c;x.shadowColor=p.c;x.shadowBlur=10;x.beginPath();x.arc(p.x,p.y,2.5,0,6.3);x.fill();x.shadowBlur=0})}requestAnimationFrame(f)})()}
+/* 3D depth scene: camera flies through floating wireframe forms as you scroll */
+if(!reduce&&window.THREE){
+const R=new THREE.WebGLRenderer({canvas:$("#gl"),alpha:true,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.5));
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(60,1,.1,200),DEPTH=130;
+const cs=getComputedStyle(document.documentElement),col=["--cy","--pu","--or","--gr"].map(v=>new THREE.Color(cs.getPropertyValue(v).trim()));
+const G=[new THREE.IcosahedronGeometry(1,0),new THREE.TorusGeometry(1,.3,8,24),new THREE.BoxGeometry(1.4,1.4,1.4),new THREE.OctahedronGeometry(1,0)],objs=[];
+for(let i=0;i<38;i++){const m=new THREE.Mesh(G[i%4],new THREE.MeshBasicMaterial({color:col[i%4],wireframe:true,transparent:true,opacity:.6}));m.position.set((i%2?1:-1)*(3+Math.random()*7),(Math.random()-.5)*9,-6-i*(DEPTH/38));m.scale.setScalar(.6+Math.random()*1.5);m.userData.r=[.002+Math.random()*.008,.002+Math.random()*.008];S.add(m);objs.push(m)}
+const pa=[];for(let i=0;i<450;i++)pa.push((Math.random()-.5)*40,(Math.random()-.5)*24,-Math.random()*DEPTH);
+const pg=new THREE.BufferGeometry();pg.setAttribute("position",new THREE.Float32BufferAttribute(pa,3));S.add(new THREE.Points(pg,new THREE.PointsMaterial({color:col[0],size:.09,transparent:true,opacity:.75})));
+const fit=()=>{R.setSize(innerWidth,innerHeight,false);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()};fit();addEventListener("resize",fit);
+let mx=0,my=0;addEventListener("pointermove",e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+(function loop(){if(!document.hidden){const p=scrollY/Math.max(1,document.body.scrollHeight-innerHeight);C.position.z+=(-p*(DEPTH-25)-C.position.z)*.06;C.position.x+=(mx*3-C.position.x)*.04;C.position.y+=(-my*2-C.position.y)*.04;C.rotation.z=mx*.04;objs.forEach(o=>{o.rotation.x+=o.userData.r[0];o.rotation.y+=o.userData.r[1]});R.render(S,C)}requestAnimationFrame(loop)})()}
+</script>
+</body>
+</html>
